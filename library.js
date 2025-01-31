@@ -1,23 +1,23 @@
-class Book {
+class book {
     // Private properties
-    #Title;
-    #Author;
+    #title;
+    #author;
     #isAvailable;
 
-    constructor(Title, Author) {
-        this.#Title = Title;
-        this.#Author = Author;
+    constructor(title, author) {
+        this.#title = title;
+        this.#author = author;
         this.#isAvailable = true;
     }
 
     // Public method
     getTitle() {
-        return this.#Title;
+        return this.#title;
     }
 
     // Public method
     getAuthor() {
-        return this.#Author;
+        return this.#author;
     }
 
     // Public method
@@ -30,25 +30,25 @@ class Book {
         if (this.#isAvailable)
             {
                 this.#isAvailable = false
-                console.log(`Ви взяли книгу "${this.#Title}" автора ${this.#Author}`);
+                console.log(`Ви взяли книгу "${this.#title}" автора ${this.#author}`);
             }
         else
         {
-            console.log(`Вибачте, книга "${this.#Title}" недоступна`);
+            console.log(`Вибачте, книга "${this.#title}" недоступна`);
         }
     }
 }
 
-class Library {
+class library {
 
     constructor() {
-        this.Books = [];
+        this.books = [];
     }
-    addBook(Books) {
-        this.Books.push(Books);
+    addBook(books) {
+        this.books.push(books);
     }
     checkoutBook(title) {
-      const book = this.Books.find(book => book.getTitle() === title);
+      const book = this.books.find(book => book.getTitle() === title);
       if (book) {
           book.checkoutBook();
       } else {
@@ -57,9 +57,9 @@ class Library {
     }
       viewAvailableBooks() {
         const availableBooks = [];
-        for (let i = 0; i < this.Books.length; i++) {
-          if (this.Books[i].isAvailable()) {
-            availableBooks.push(`- "${this.Books[i].getTitle()}" автора ${this.Books[i].getAuthor()}`);
+        for (let i = 0; i < this.books.length; i++) {
+          if (this.books[i].isAvailable()) {
+            availableBooks.push(`- "${this.books[i].getTitle()}" автора ${this.books[i].getAuthor()}`);
           }
         }
         if (availableBooks.length > 0) {
@@ -74,11 +74,11 @@ class Library {
       }
     }
 
-    const myLibrary = new Library();
-    const book1 = new Book("Фелікс Австрія", "Софія Андрухович");
-    const book2 = new Book("Сад Гетсиманський", "Іван Багряний");
-    const book3 = new Book("Інститутка", "Марко Вовчок");
-    const book4 = new Book("Інтернат", "Сергій Жадан");
+    const myLibrary = new library();
+    const book1 = new book("Фелікс Австрія", "Софія Андрухович");
+    const book2 = new book("Сад Гетсиманський", "Іван Багряний");
+    const book3 = new book("Інститутка", "Марко Вовчок");
+    const book4 = new book("Інтернат", "Сергій Жадан");
     myLibrary.addBook(book1);
     myLibrary.addBook(book2);
     myLibrary.addBook(book3);
