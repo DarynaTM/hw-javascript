@@ -1,4 +1,4 @@
-function goodsPrice (cart){
+function calculateGoodsPrice (cart){
     let totalPrice = 0;
     for (let i = 0; i < cart.length; i++) {
       totalPrice += cart[i].price * cart[i].quantity;
@@ -13,17 +13,17 @@ const cart1 = [
      {name: "Banana", price: 3, quantity: 5},
      {name: "Milk", price: 10, quantity: 2},
 ];
-console.log(goodsPrice(cart1));
+console.log(calculateGoodsPrice(cart1));
 
 const cart2 = [
   {name: "Sushi", price: 20, quantity: 4},
   {name: "Burger Max", price: 30, quantity: 1},
  ]
- console.log(goodsPrice(cart2));
+ console.log(calculateGoodsPrice(cart2));
 
  const cart3 = [
   {name: "Notepads", price: 40, quantity: 5},
   {name: "Pens", price: 20, quantity: 5},
   {name: "Pencils", price: 15, quantity: 5}
 ]
-console.log(goodsPrice(cart3));
+console.log(calculateGoodsPrice(cart3));
